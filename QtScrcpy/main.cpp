@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     qputenv("QTSCRCPY_KEYMAP_PATH", "../../../../../../keymap");
 #endif
 
-#ifdef Q_OS_LINUX
+#if defined(Q_OS_LINUX) && defined(QTSCRCPY_DEV_ENV)
     qputenv("QTSCRCPY_ADB_PATH", "../../../third_party/adb/linux/adb");
     qputenv("QTSCRCPY_SERVER_PATH", "../../../third_party/scrcpy-server");
     qputenv("QTSCRCPY_CONFIG_PATH", "../../../config");
